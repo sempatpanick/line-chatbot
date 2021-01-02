@@ -64,7 +64,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                     $event['message']['type'] == 'audio' or
                     $event['message']['type'] == 'file'
                 ) {
-                    $contentURL = " https://app-chatbotline.herokuapp.com/public/content/" . $event['message']['id'];
+                    $contentURL = "///YOUR_CONTENT_URL///" . $event['message']['id'];
                     $contentType = ucfirst($event['message']['type']);
                     $result = $bot->replyText(
                         $event['replyToken'],
@@ -128,7 +128,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 
 $app->get('/pushmessage', function ($req, $response) use ($bot) {
     // send push message to user
-    $userId = 'U722e41c88a9a861f1c8d1ae3e6d99d5c';
+    $userId = 'XXXXXXXX';
     $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
     $result = $bot->pushMessage($userId, $textMessageBuilder);
 
@@ -142,7 +142,7 @@ $app->get('/pushmessage', function ($req, $response) use ($bot) {
 $app->get('/multicast', function ($req, $response) use ($bot) {
     // list of users
     $userList = [
-        'U722e41c88a9a861f1c8d1ae3e6d99d5c'
+        'XXXXXXX'
     ];
 
     // send multicast message to user
