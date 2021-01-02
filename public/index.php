@@ -130,7 +130,7 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
 
 $app->get('/pushmessage', function ($req, $response) use ($bot) {
     // send push message to user
-    $userId = 'XXXXXXXX';
+    $userId = 'XXXXXXXX'; //Isi dengan User ID anda/orang lain
     $textMessageBuilder = new TextMessageBuilder('Halo, ini pesan push');
     $result = $bot->pushMessage($userId, $textMessageBuilder);
 
@@ -144,7 +144,9 @@ $app->get('/pushmessage', function ($req, $response) use ($bot) {
 $app->get('/multicast', function ($req, $response) use ($bot) {
     // list of users
     $userList = [
-        'XXXXXXX'
+        'XXXXXXX', //Isi dengan User ID anda/orang lain
+        'XXXXXXX', //Isi dengan User ID anda/orang lain
+        'XXXXXXX' //Isi dengan User ID anda/orang lain
     ];
 
     // send multicast message to user
