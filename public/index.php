@@ -123,7 +123,9 @@ $app->post('/webhook', function (Request $request, Response $response) use ($cha
                 }
             }
         }
+        return $response->withStatus(200, 'for Webhook!'); //buat ngasih response 200 ke pas verify webhook
     }
+    return $response->withStatus(400, 'No event sent!');
 });
 
 $app->get('/pushmessage', function ($req, $response) use ($bot) {
